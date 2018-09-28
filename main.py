@@ -18,6 +18,7 @@ def displayBoard(inList):
             if i != 9 :
                 print(type2Str)
     print("\n\n")
+
 def play():
     '''Main leading Function where execution starts it includes  all global variable declaration and Introduction of game.'''
     global inputList 
@@ -40,9 +41,8 @@ def play():
         print("Invalid Choice. Enter A Valid Choice :-")
         play()
 
-
-
 def playerInput(playerNumber,choice):
+    '''function used to take inputs from player '''
     global flag
     print(f"Player {playerNumber} :-")
     pos = int(input("Enter You choice from numpad[1-9] according to position shown before :- \n"))
@@ -65,12 +65,8 @@ def playerInput(playerNumber,choice):
             print("Good Bye!!!")
             exit()
             
-
-
-
-
-
 def winCheck(playerNumber,choice):
+    '''function used to check if any user wins ot it's a tie'''
     possibleWins = [(1,2,3),(4,5,6),(7,8,9),(1,4,7),(2,5,8),(3,6,9),(1,5,9),(3,5,7)]
     global flag
     global inputList
@@ -88,8 +84,6 @@ def winCheck(playerNumber,choice):
             flag = False
         print("Good Bye!!!")
         exit()
-
-
     if not flag :
         if choice == 'X':
             newChoice = 'O'
@@ -101,5 +95,5 @@ def winCheck(playerNumber,choice):
             newPlayer = 1
         playerInput(newPlayer, newChoice)
 
-play()
+play() #Calls the main play function to start execution 
 
